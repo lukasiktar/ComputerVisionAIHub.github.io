@@ -1,0 +1,17 @@
+# weights & training artifacts never belong in the repo (they live on Hugging Face)
+*.pt
+*.onnx
+runs/
+datasets/
+
+# secrets
+.env
+*.key
+
+# python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# os
+.DS_Store

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- CHANGE THE PLATFORM NAME HERE (and in the <title>, footer, and app.js DOCKER_IMAGE). -->
+  <title>ComputerVisionAIHub — open YOLO model hub</title>
+  <meta name="description" content="A community catalog of custom-trained YOLO models. Download weights or run them locally." />
+
+  <!-- Fonts: Space Grotesk (display) + JetBrains Mono (data). Swap these to rebrand the type. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="brand">
+        <!-- The little box+tab glyph echoes the bounding-box motif used on every card. -->
+        <span class="brand-mark" aria-hidden="true"></span>
+        <div>
+          <h1 class="brand-name">ComputerVisionAIHub</h1>
+          <p class="brand-tag">Custom-trained YOLO models, free to download and run.</p>
+        </div>
+      </div>
+      <a class="ghost-btn" href="https://github.com/youruser/yolo-model-hub" target="_blank" rel="noopener">
+        Contribute a model →
+      </a>
+    </div>
+  </header>
+
+  <!-- ============ TOOLBAR (search + task filter) ============ -->
+  <section class="wrap toolbar" aria-label="Filter models">
+    <input
+      id="search"
+      class="search"
+      type="search"
+      placeholder="Search by name, class, or dataset…"
+      autocomplete="off"
+    />
+    <div id="task-filters" class="filters" role="group" aria-label="Filter by task">
+      <!-- Task pills are injected by app.js so they always match the tasks present in models.json. -->
+    </div>
+  </section>
+
+  <!-- ============ RESULTS COUNT ============ -->
+  <p id="count" class="wrap count" aria-live="polite"></p>
+
+  <!-- ============ MODEL GRID (filled by app.js) ============ -->
+  <main id="grid" class="wrap grid" aria-live="polite"></main>
+
+  <!-- ============ EMPTY / ERROR STATE ============ -->
+  <div id="state" class="wrap state" hidden></div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>ComputerVisionAIHub · open source · models licensed individually — check each dataset license before commercial use.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

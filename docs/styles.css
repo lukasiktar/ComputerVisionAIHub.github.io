@@ -1,0 +1,241 @@
+/* ============================================================
+   ComputerVisionAIHub — catalog styles
+   Edit the tokens in :root to rebrand. Everything below derives
+   from these. The "signature" of the design is the bounding-box
+   card frame + corner label tab (see .model-card).
+   ============================================================ */
+
+:root {
+  /* ---- palette (annotation-tool light surface) ---- */
+  --paper:    #F4F5F3;   /* page background        */
+  --surface:  #FFFFFF;   /* cards                  */
+  --ink:      #14171A;   /* primary text           */
+  --ink-soft: #5B6168;   /* muted text             */
+  --line:     #E4E6E3;   /* hairlines              */
+
+  /* ---- detection colors: used like YOLO box colors ---- */
+  --box:    #0E9F8E;     /* primary accent (teal)  */
+  --box-2:  #E8552D;     /* secondary (coral)      */
+
+  /* ---- type ---- */
+  --display: "Space Grotesk", system-ui, sans-serif;
+  --mono:    "JetBrains Mono", ui-monospace, monospace;
+  --body:    system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --radius: 10px;
+  --maxw: 1100px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { max-width: var(--maxw); margin: 0 auto; padding-inline: 24px; }
+
+a { color: var(--box); }
+
+/* ============ HEADER ============ */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+.header-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 24px; padding-block: 22px;
+}
+.brand { display: flex; align-items: center; gap: 14px; }
+
+/* The brand mark is a tiny bounding box with a label tab — the motif in miniature. */
+.brand-mark {
+  position: relative;
+  width: 30px; height: 30px;
+  border: 2.5px solid var(--box);
+  border-radius: 4px;
+  flex: none;
+}
+.brand-mark::before {
+  content: "";
+  position: absolute; top: -2.5px; left: -2.5px;
+  width: 12px; height: 6px;
+  background: var(--box);
+  border-radius: 4px 0 4px 0;
+}
+
+.brand-name {
+  font-family: var(--display);
+  font-weight: 700; font-size: 1.45rem;
+  margin: 0; letter-spacing: -0.02em;
+}
+.brand-tag { margin: 2px 0 0; color: var(--ink-soft); font-size: 0.9rem; }
+
+.ghost-btn {
+  font-family: var(--mono); font-size: 0.82rem;
+  text-decoration: none; color: var(--ink);
+  border: 1px solid var(--line); border-radius: 8px;
+  padding: 9px 14px; white-space: nowrap;
+  transition: border-color .15s, color .15s;
+}
+.ghost-btn:hover { border-color: var(--box); color: var(--box); }
+
+/* ============ TOOLBAR ============ */
+.toolbar {
+  display: flex; flex-wrap: wrap; gap: 14px;
+  align-items: center; justify-content: space-between;
+  padding-top: 28px;
+}
+.search {
+  flex: 1 1 280px;
+  font-family: var(--body); font-size: 0.95rem;
+  padding: 11px 14px;
+  border: 1px solid var(--line); border-radius: 8px;
+  background: var(--surface); color: var(--ink);
+}
+.search:focus-visible { outline: 2px solid var(--box); outline-offset: 1px; border-color: var(--box); }
+
+.filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.pill {
+  font-family: var(--mono); font-size: 0.78rem;
+  padding: 7px 13px; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--surface);
+  color: var(--ink-soft); cursor: pointer;
+  transition: all .15s;
+}
+.pill:hover { border-color: var(--box); color: var(--ink); }
+.pill[aria-pressed="true"] { background: var(--ink); color: #fff; border-color: var(--ink); }
+.pill:focus-visible { outline: 2px solid var(--box); outline-offset: 1px; }
+
+.count {
+  font-family: var(--mono); font-size: 0.78rem;
+  color: var(--ink-soft); margin: 18px auto 4px;
+}
+
+/* ============ GRID ============ */
+.grid {
+  display: grid; gap: 20px; padding-block: 12px 60px;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+}
+
+/* ---- THE SIGNATURE: a model card framed like a detection box ---- */
+.model-card {
+  position: relative;
+  background: var(--surface);
+  border: 2px solid var(--ink);          /* the "bounding box" */
+  border-radius: var(--radius);
+  padding: 26px 22px 20px;
+  display: flex; flex-direction: column; gap: 14px;
+  transition: border-color .18s, transform .18s;
+}
+.model-card:hover { border-color: var(--box); transform: translateY(-2px); }
+
+/* The corner label tab — mimics YOLO stamping "class conf" on a box edge. */
+.card-tab {
+  position: absolute; top: -2px; left: -2px;
+  font-family: var(--mono); font-size: 0.72rem; font-weight: 500;
+  color: #fff; background: var(--ink);
+  padding: 4px 10px; border-radius: 8px 0 8px 0;
+  transition: background .18s;
+}
+.model-card:hover .card-tab { background: var(--box); }
+
+.card-head { display: flex; flex-direction: column; gap: 6px; }
+.card-name {
+  font-family: var(--display); font-weight: 500; font-size: 1.18rem;
+  margin: 0; letter-spacing: -0.01em;
+}
+.card-summary { color: var(--ink-soft); font-size: 0.9rem; margin: 0; }
+
+.badges { display: flex; flex-wrap: wrap; gap: 6px; }
+.badge {
+  font-family: var(--mono); font-size: 0.72rem;
+  padding: 3px 8px; border-radius: 6px;
+  background: var(--paper); border: 1px solid var(--line);
+  color: var(--ink-soft);
+}
+.badge.base { color: var(--box); border-color: color-mix(in srgb, var(--box) 35%, var(--line)); }
+
+/* class chips — colored like detection labels */
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  font-family: var(--mono); font-size: 0.72rem;
+  padding: 3px 9px; border-radius: 999px;
+  background: color-mix(in srgb, var(--box) 12%, transparent);
+  color: color-mix(in srgb, var(--box) 78%, var(--ink));
+}
+.chip.more { background: var(--paper); color: var(--ink-soft); }
+
+/* ---- mAP rendered as confidence bars ---- */
+.metrics { display: flex; flex-direction: column; gap: 8px; margin-top: 2px; }
+.metric { display: grid; grid-template-columns: 86px 1fr 46px; align-items: center; gap: 10px; }
+.metric-label { font-family: var(--mono); font-size: 0.72rem; color: var(--ink-soft); }
+.bar { height: 7px; background: var(--paper); border-radius: 999px; overflow: hidden; }
+.bar > span { display: block; height: 100%; background: var(--box); border-radius: 999px; }
+.metric-val { font-family: var(--mono); font-size: 0.75rem; text-align: right; }
+
+.card-meta {
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+  font-family: var(--mono); font-size: 0.72rem; color: var(--ink-soft);
+  border-top: 1px solid var(--line); padding-top: 12px; margin-top: 2px;
+}
+
+/* ---- actions ---- */
+.actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.btn {
+  font-family: var(--mono); font-size: 0.8rem; font-weight: 500;
+  text-decoration: none; cursor: pointer;
+  padding: 9px 14px; border-radius: 8px; border: 1px solid transparent;
+  transition: all .15s;
+}
+.btn.primary { background: var(--box); color: #fff; }
+.btn.primary:hover { background: color-mix(in srgb, var(--box) 85%, #000); }
+.btn.secondary { background: var(--surface); color: var(--ink); border-color: var(--line); }
+.btn.secondary:hover { border-color: var(--ink); }
+.btn:focus-visible { outline: 2px solid var(--box); outline-offset: 1px; }
+
+/* copyable docker command */
+.run {
+  font-family: var(--mono); font-size: 0.72rem;
+  background: var(--ink); color: #E6E8E6;
+  border-radius: 8px; padding: 10px 12px;
+  display: flex; align-items: center; gap: 10px; justify-content: space-between;
+  overflow-x: auto;
+}
+.run code { white-space: nowrap; }
+.copy-btn {
+  font-family: var(--mono); font-size: 0.68rem;
+  background: transparent; color: #9aa0a6; border: 1px solid #2c3137;
+  border-radius: 6px; padding: 3px 8px; cursor: pointer; flex: none;
+}
+.copy-btn:hover { color: #fff; border-color: #4a5057; }
+
+/* ============ STATE (empty / error) ============ */
+.state {
+  text-align: center; padding: 60px 24px; color: var(--ink-soft);
+  font-family: var(--mono); font-size: 0.9rem;
+}
+
+/* ============ FOOTER ============ */
+.site-footer {
+  border-top: 1px solid var(--line); background: var(--surface);
+  padding-block: 22px; margin-top: 40px;
+}
+.site-footer p { margin: 0; color: var(--ink-soft); font-size: 0.82rem; }
+
+/* ============ MOTION (staggered card reveal) ============ */
+@media (prefers-reduced-motion: no-preference) {
+  .model-card { animation: rise .4s ease both; }
+  @keyframes rise { from { opacity: 0; transform: translateY(10px); } }
+}
+
+@media (max-width: 560px) {
+  .header-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .grid { grid-template-columns: 1fr; }
+}

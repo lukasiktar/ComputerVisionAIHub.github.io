@@ -1,0 +1,29 @@
+name: Validate catalog
+
+# Runs when the manifest or the validator changes — on PRs (to block bad merges)
+# and on pushes to main (to catch anything that slips through). Manual runs allowed.
+on:
+  pull_request:
+    paths:
+      - "docs/models.json"
+      - "scripts/validate_models.py"
+      - ".github/workflows/validate.yml"
+  push:
+    branches: [main]
+    paths:
+      - "docs/models.json"
+      - "scripts/validate_models.py"
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate models.json (schema + download links)
+        run: python scripts/validate_models.py --check-links
