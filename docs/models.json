@@ -34,41 +34,9 @@
       "onnx": "https://huggingface.co/lukasiktar11/jetson_nano_detection/resolve/main/best.onnx",
       "size_mb": 5.4,
       "image_size": 640
-    },
-
-    {
-      "id": "traffic-signs-v1",
-      "name": "Traffic Sign Detector",
-      "summary": "Detects common road signs in dashcam and street imagery.",
-      "base_model": "yolo26n",
-      "task": "detection",
-      "classes": ["stop", "yield", "speed_limit", "no_entry", "pedestrian_crossing"],
-      "dataset": "https://universe.roboflow.com/example/traffic-signs",
-      "dataset_license": "CC BY 4.0",
-      "metrics": { "mAP50": 0.91, "mAP50_95": 0.74 },
-      "hf_repo": "youruser/traffic-signs-v1",
-      "download": "https://huggingface.co/youruser/traffic-signs-v1/resolve/main/best.pt",
-      "onnx": "https://huggingface.co/youruser/traffic-signs-v1/resolve/main/best.onnx",
-      "size_mb": 6.2,
-      "image_size": 640,
-      "updated": "2026-06-01"
-    },
-    {
-      "id": "safety-gear-v2",
-      "name": "PPE / Safety Gear Detector",
-      "summary": "Flags hard hats, vests, and safety glasses on worksite photos.",
-      "base_model": "yolo26s",
-      "task": "detection",
-      "classes": ["hardhat", "no_hardhat", "vest", "glasses", "person"],
-      "dataset": "https://universe.roboflow.com/example/construction-ppe",
-      "dataset_license": "MIT",
-      "metrics": { "mAP50": 0.88, "mAP50_95": 0.69 },
-      "hf_repo": "youruser/safety-gear-v2",
-      "download": "https://huggingface.co/youruser/safety-gear-v2/resolve/main/best.pt",
-      "onnx": "https://huggingface.co/youruser/safety-gear-v2/resolve/main/best.onnx",
-      "size_mb": 21.5,
-      "image_size": 640,
-      "updated": "2026-05-18"
     }
+
+    
+   
   ]
 }
