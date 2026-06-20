@@ -3,7 +3,7 @@
   "models": [
 
     {
-      "id": "jetson_nano_detection",
+      "id": "jetson-nano-detection",
       "name": "Jetson Nano elements Detector",
       "summary": "Detects structural elements of the Jetson Nano.",
       "base_model": "yolo26n",
