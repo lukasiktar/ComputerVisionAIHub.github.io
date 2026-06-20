@@ -23,7 +23,7 @@
         "Power",
         "USB"
       ],
-      "dataset": "https://universe.roboflow.com/...",
+      "dataset": "https://universe.roboflow.com/fmena-dwmmh/jetson_nano",
       "dataset_license": "CC BY 4.0",
       "metrics": {
         "mAP50": 0.954,
