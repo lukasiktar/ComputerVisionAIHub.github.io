@@ -34,6 +34,31 @@
       "onnx": "https://huggingface.co/lukasiktar11/jetson_nano_detection/resolve/main/best.onnx",
       "size_mb": 5.4,
       "image_size": 640
+    },
+
+
+    {
+      "id": "traffic-vehicle-detection",
+      "name": "Traffic Vehicle Detector",
+      "summary": "Detects cars, busses and trucks in the traffic.",
+      "base_model": "yolo26n",
+      "task": "detection",
+      "classes": [
+        "bus",
+        "car",
+        "truck"
+      ],
+      "dataset": "https://universe.roboflow.com/roboflow-100/vehicles-q0x2v",
+      "dataset_license": "CC BY 4.0",
+      "metrics": {
+        "mAP50": 0.827,
+        "mAP50_95": 0.553
+      },
+      "hf_repo": "lukasiktar11/traffic_vehicle_detection",
+      "download": "https://huggingface.co/lukasiktar11/traffic_vehicle_detection/resolve/main/best.pt",
+      "onnx": "https://huggingface.co/lukasiktar11/traffic_vehicle_detection/resolve/main/best.onnx",
+      "size_mb": 5.4,
+      "image_size": 640
     }
 
     
