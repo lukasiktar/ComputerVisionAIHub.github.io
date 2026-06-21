@@ -86,6 +86,21 @@ a { color: var(--box); }
 }
 .ghost-btn:hover { border-color: var(--box); color: var(--box); }
 
+/* ============ LAUNCH PANEL ============ */
+.launch-panel {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 16px;
+  background: var(--surface); border: 2px solid var(--ink); border-radius: var(--radius);
+  padding: 18px 22px; margin-top: 24px;
+}
+.launch-text { flex: 1 1 260px; }
+.launch-text h2 {
+  font-family: var(--display); font-weight: 500; font-size: 1.05rem;
+  margin: 0 0 4px; letter-spacing: -0.01em;
+}
+.launch-text p { margin: 0; color: var(--ink-soft); font-size: 0.85rem; }
+.launch-text code { font-family: var(--mono); font-size: 0.82rem; }
+.launch-run { flex: 2 1 380px; margin: 0; }
+
 /* ============ TOOLBAR ============ */
 .toolbar {
   display: flex; flex-wrap: wrap; gap: 14px;

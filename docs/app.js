@@ -5,7 +5,7 @@
    ============================================================ */
 
 // Change this to your GHCR/Docker Hub image.
-const DOCKER_IMAGE = "ghcr.io/lukasiktar/computervisionaihub:latest";
+const DOCKER_IMAGE = "docker.io/lukasiktar/computervisionaihub";
 
 // Module-level state
 let ALL_MODELS = [];
@@ -146,19 +146,21 @@ function card(m) {
 }
 
 // ---- 5. COPY BUTTONS ----
-function wireCopyButtons() {
-  els.grid.querySelectorAll(".copy-btn").forEach((btn) => {
-    btn.addEventListener("click", async () => {
-      try {
-        await navigator.clipboard.writeText(btn.dataset.cmd);
-        const old = btn.textContent;
-        btn.textContent = "copied";
-        setTimeout(() => (btn.textContent = old), 1200);
-      } catch {
-        btn.textContent = "press ⌘C";
-      }
-    });
+function wireCopyButton(btn) {
+  btn.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(btn.dataset.cmd);
+      const old = btn.textContent;
+      btn.textContent = "copied";
+      setTimeout(() => (btn.textContent = old), 1200);
+    } catch {
+      btn.textContent = "press ⌘C";
+    }
   });
+}
+
+function wireCopyButtons() {
+  els.grid.querySelectorAll(".copy-btn").forEach(wireCopyButton);
 }
 
 function showState(msg) {
@@ -170,5 +172,9 @@ function showState(msg) {
 
 // ---- search input (debounced lightly via input event) ----
 els.search.addEventListener("input", (e) => { query = e.target.value; render(); });
+
+// ---- static "run locally" panel copy button (outside the grid, wired once) ----
+const launchCopyBtn = document.getElementById("launch-copy");
+if (launchCopyBtn) wireCopyButton(launchCopyBtn);
 
 load();

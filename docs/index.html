@@ -32,6 +32,19 @@
     </div>
   </header>
 
+  <!-- ============ LAUNCH PANEL (run the visual UI locally) ============ -->
+  <section class="wrap launch-panel" aria-label="Run locally">
+    <div class="launch-text">
+      <h2>Run the visual UI locally</h2>
+      <p>Pulls the image if it's not cached, starts the app, and serves a drag-and-drop UI on <code>localhost:7860</code>. Requires Docker.</p>
+    </div>
+    <div class="run launch-run">
+      <code id="launch-cmd">docker run -p 7860:7860 --entrypoint python docker.io/lukasiktar/computervisionaihub app.py</code>
+      <button class="copy-btn" id="launch-copy" data-cmd="docker run -p 7860:7860 --entrypoint python docker.io/lukasiktar/computervisionaihub app.py">copy</button>
+    </div>
+    <a class="btn primary" href="http://localhost:7860" target="_blank" rel="noopener">Open localhost:7860 →</a>
+  </section>
+
   <!-- ============ TOOLBAR (search + task filter) ============ -->
   <section class="wrap toolbar" aria-label="Filter models">
     <input
