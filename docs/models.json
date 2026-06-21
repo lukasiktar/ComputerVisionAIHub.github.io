@@ -59,8 +59,32 @@
       "onnx": "https://huggingface.co/lukasiktar11/traffic_vehicle_detection/resolve/main/best.onnx",
       "size_mb": 5.4,
       "image_size": 640
+    },
+    {
+      "id": "traffic-vehicle-detection2",
+      "name": "Traffic Vehicle Detector 2",
+      "summary": "Detects cars, busses and trucks in the traffic.",
+      "base_model": "yolo26s",
+      "task": "detection",
+      "classes": [
+        "bus",
+        "car",
+        "truck"
+      ],
+      "dataset": "https://universe.roboflow.com/roboflow-100/vehicles-q0x2v",
+      "dataset_license": "CC BY 4.0",
+      "metrics": {
+        "mAP50": 0.852,
+        "mAP50_95": 0.57,
+        "precision": 0.797,
+        "recall": 0.812
+      },
+      "hf_repo": "lukasiktar11/traffic_vehicle_detection2",
+      "download": "https://huggingface.co/lukasiktar11/traffic_vehicle_detection2/resolve/main/best.pt",
+      "onnx": "https://huggingface.co/lukasiktar11/traffic_vehicle_detection2/resolve/main/best.onnx",
+      "size_mb": 20.3,
+      "image_size": 640
     }
-
     
    
   ]
