@@ -84,6 +84,56 @@
       "onnx": "https://huggingface.co/lukasiktar11/traffic_vehicle_detection2/resolve/main/best.onnx",
       "size_mb": 20.3,
       "image_size": 640
+    },
+
+    {
+      "id": "football-player-detector",
+      "name": "Football player detector",
+      "summary": "Detects football players and the ball on macro view.",
+      "base_model": "yolo26s",
+      "task": "detection",
+      "classes": [
+        "ball",
+        "player"
+      ],
+      "dataset": "https://universe.roboflow.com/dev-h00ha/football-r4il1",
+      "dataset_license": "CC BY 4.0",
+      "metrics": {
+        "mAP50": 0.796,
+        "mAP50_95": 0.499,
+        "precision": 0.886,
+        "recall": 0.739
+      },
+      "hf_repo": "lukasiktar11/football-player-detector",
+      "download": "https://huggingface.co/lukasiktar11/football-player-detector/resolve/main/best.pt",
+      "onnx": "https://huggingface.co/lukasiktar11/football-player-detector/resolve/main/best.onnx",
+      "size_mb": 20.3,
+      "image_size": 640
+    },
+
+    {
+      "id": "football-player-detector2",
+      "name": "Football player detector2",
+      "summary": "Detects football players and the ball on macro view.",
+      "base_model": "yolo26n",
+      "task": "detection",
+      "classes": [
+        "ball",
+        "player"
+      ],
+      "dataset": "https://universe.roboflow.com/dev-h00ha/football-r4il1",
+      "dataset_license": "CC BY 4.0",
+      "metrics": {
+        "mAP50": 0.755,
+        "mAP50_95": 0.49,
+        "precision": 0.876,
+        "recall": 0.721
+      },
+      "hf_repo": "lukasiktar11/football-player-detector2",
+      "download": "https://huggingface.co/lukasiktar11/football-player-detector2/resolve/main/best.pt",
+      "onnx": "https://huggingface.co/lukasiktar11/football-player-detector2/resolve/main/best.onnx",
+      "size_mb": 5.4,
+      "image_size": 640
     }
     
    
