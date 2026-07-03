@@ -39,10 +39,18 @@ def get_model(model_ref: str):
 def run(model_ref, image, conf):
     model = get_model(model_ref)
     results = model(image, conf=conf)
-    annotated = results[0].plot()[:, :, ::-1]  # BGR -> RGB for display
+    annotated = results[0].plot()[:, :, ::-1]  # BGR -> RGB
 
     names = model.names
-    rows = [[names[int(b.cls)], round(float(b.conf), 3)] for b in results[0].boxes]
+
+    # Works for both detection and OBB models
+    detections = results[0].obb if results[0].obb is not None else results[0].boxes
+
+    rows = [
+        [names[int(det.cls)], round(float(det.conf), 3)]
+        for det in detections
+    ]
+
     return annotated, rows
 
 
