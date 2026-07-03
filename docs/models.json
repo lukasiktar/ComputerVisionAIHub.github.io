@@ -134,8 +134,31 @@
       "onnx": "https://huggingface.co/lukasiktar11/football-player-detector2/resolve/main/best.onnx",
       "size_mb": 5.4,
       "image_size": 640
+    },
+    {
+      "id": "parking-spot-detector",
+      "name": "Parking spot detector",
+      "summary": "Detects parking spots and whether cars are on the spots.",
+      "base_model": "yolo26s-obb",
+      "task": "obb",
+      "classes": [
+        "empty",
+        "occupied"
+      ],
+      "dataset": "https://universe.roboflow.com/pklot/detection-of-parking-spaces",
+      "dataset_license": "CC BY 4.0",
+      "metrics": {
+        "mAP50": 0.989,
+        "mAP50_95": 0.963,
+        "precision": 0.962,
+        "recall": 0.96
+      },
+      "hf_repo": "lukasiktar11/parking-spot-detector",
+      "download": "https://huggingface.co/lukasiktar11/parking-spot-detector/resolve/main/best.pt",
+      "onnx": "https://huggingface.co/lukasiktar11/parking-spot-detector/resolve/main/best.onnx",
+      "size_mb": 21.8,
+      "image_size": 640
     }
-    
-   
+
   ]
 }
