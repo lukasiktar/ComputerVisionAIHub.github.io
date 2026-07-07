@@ -40,7 +40,7 @@
     </div>
     <div class="run launch-run">
       <code id="launch-cmd">docker run -p 7860:7860 --entrypoint python docker.io/lukasiktar/computervisionaihub app.py</code>
-      <button class="copy-btn" id="launch-copy" data-cmd="docker run -p 7860:7860 --entrypoint python docker.io/lukasiktar/computervisionaihub app.py">copy</button>
+      <button class="copy-btn" id="launch-copy" data-cmd="docker run -p 7860:7860 -v $(pwd)/inference:/app  --entrypoint python docker.io/lukasiktar/computervisionaihub app.py">copy</button>
     </div>
     <a class="btn primary" href="http://localhost:7860" target="_blank" rel="noopener">Open localhost:7860 →</a>
   </section>

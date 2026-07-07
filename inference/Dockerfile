@@ -7,7 +7,8 @@
 #   docker run -v $(pwd):/data computervisionaihub <MODEL_URL> /data/test.jpg
 #
 # Run the web UI instead (drag-and-drop on http://localhost:7860):
-#   docker run -p 7860:7860 --entrypoint python computervisionaihub app.py
+#   docker run -p 7860:7860 -v $(pwd)/inference:/app  --entrypoint python docker.io/lukasiktar/computervisionaihub app.py
+
 
 FROM python:3.11-slim
 
