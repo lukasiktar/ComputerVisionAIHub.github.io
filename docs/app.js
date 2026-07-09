@@ -106,8 +106,17 @@ function card(m) {
   const runCmd =
     `docker run -v $(pwd):/data ${DOCKER_IMAGE} ${m.download} /data/test.jpg`;
 
+  const imageBlock = m.image
+    ? `<div class="card-image">
+         <img src="${esc(m.image)}" alt="Example detections from ${esc(m.name)}" loading="lazy"
+              onerror="this.closest('.card-image').classList.add('placeholder'); this.remove();">
+       </div>`
+    : `<div class="card-image placeholder" role="img" aria-label="No preview image yet"></div>`;
+
   return `<article class="model-card">
     <span class="card-tab">${esc(m.id)}</span>
+
+    ${imageBlock}
 
     <div class="card-head">
       <h2 class="card-name">${esc(m.name)}</h2>
@@ -116,7 +125,7 @@ function card(m) {
 
     <div class="badges">
       <span class="badge base">${esc(m.base_model || "yolo")}</span>
-      <span class="badge">${esc(m.task || "detection")}</span>
+      <span class="badge task-${esc(m.task || "detection")}">${esc(m.task || "detection")}</span>
       <span class="badge">${esc(m.image_size || 640)}px</span>
     </div>
 
@@ -125,6 +134,8 @@ function card(m) {
     <div class="metrics">
       ${m.metrics ? metric("mAP@50", m.metrics.mAP50) : ""}
       ${m.metrics ? metric("mAP@50-95", m.metrics.mAP50_95) : ""}
+      ${m.metrics && m.metrics.precision != null ? metric("precision", m.metrics.precision) : ""}
+      ${m.metrics && m.metrics.recall != null ? metric("recall", m.metrics.recall) : ""}
     </div>
 
     <div class="card-meta">
@@ -138,9 +149,20 @@ function card(m) {
       ${m.dataset ? `<a class="btn secondary" href="${esc(m.dataset)}" target="_blank" rel="noopener">Dataset</a>` : ""}
     </div>
 
-    <div class="run">
-      <code>${esc(runCmd)}</code>
-      <button class="copy-btn" data-cmd="${esc(runCmd)}">copy</button>
+    <div class="run-group">
+      <span class="run-label">Model URL — paste into localhost:7860</span>
+      <div class="run">
+        <code>${esc(m.download)}</code>
+        <button class="copy-btn" data-cmd="${esc(m.download)}">copy</button>
+      </div>
+    </div>
+
+    <div class="run-group">
+      <span class="run-label">Run via CLI</span>
+      <div class="run">
+        <code>${esc(runCmd)}</code>
+        <button class="copy-btn" data-cmd="${esc(runCmd)}">copy</button>
+      </div>
     </div>
   </article>`;
 }

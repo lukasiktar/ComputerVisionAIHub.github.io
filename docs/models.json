@@ -1,5 +1,5 @@
 {
-  "_comment": "This file is model catalog. Add a model by appending one object to the array below. The website fetches this file and renders a card per entry.",
+  "_comment": "This file is model catalog. Add a model by appending one object to the array below. The website fetches this file and renders a card per entry. Optional 'image' field: a URL or a path relative to docs/ (e.g. assets/previews/<id>.jpg) showing a sample detection. Omit it and the card shows a placeholder.",
   "models": [
 
     {
@@ -207,7 +207,37 @@
       "onnx": "https://huggingface.co/lukasiktar11/parking-spot-detector3/resolve/main/best.onnx",
       "size_mb": 5.85,
       "image_size": 640
+    },
+
+    {
+      "id": "aerial-traffic-detector",
+      "name": "Aerial traffic detector",
+      "summary": "Detects vehicles in aerial images and tracks their movement.",
+      "base_model": "yolo26s",
+      "task": "detection",
+      "classes": [
+        "car",
+        "bus",
+        "truck",
+        "bicycle",
+        "motorcycle",
+        "person"
+      ],
+      "dataset": "https://universe.roboflow.com/computervisionaihub-n6cdj/aerial-qjpyp-pw1qp",
+      "dataset_license": "CC BY 4.0",
+      "metrics": {
+        "mAP50": 0.9861,
+        "mAP50_95": 0.94,
+        "precision": 0.9674,
+        "recall": 0.9642
+      },
+      "hf_repo": "aerial-traffic-detector",
+      "download": "https://huggingface.co/lukasiktar11/aerial-traffic-detector/resolve/main/best.pt",
+      "onnx": "https://huggingface.co/lukasiktar11/aerial-traffic-detector/resolve/main/best.onnx",
+      "size_mb": 20.3,
+      "image_size": 640
     }
+
 
   ]
 }

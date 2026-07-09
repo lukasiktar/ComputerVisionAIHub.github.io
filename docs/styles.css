@@ -142,6 +142,7 @@ a { color: var(--box); }
 /* ---- THE SIGNATURE: a model card framed like a detection box ---- */
 .model-card {
   position: relative;
+  min-width: 0;                          /* let long command text scroll instead of stretching the grid track */
   background: var(--surface);
   border: 2px solid var(--ink);          /* the "bounding box" */
   border-radius: var(--radius);
@@ -161,6 +162,28 @@ a { color: var(--box); }
 }
 .model-card:hover .card-tab { background: var(--box); }
 
+/* Preview image — a sample of what the model detects. */
+.card-image {
+  aspect-ratio: 16 / 9;
+  border-radius: calc(var(--radius) - 6px);
+  overflow: hidden;
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+.card-image img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+.card-image.placeholder {
+  display: flex; align-items: center; justify-content: center;
+  border-style: dashed;
+}
+.card-image.placeholder::after {
+  content: "no preview yet";
+  font-family: var(--mono); font-size: 0.7rem;
+  color: var(--ink-soft); letter-spacing: .02em;
+}
+
 .card-head { display: flex; flex-direction: column; gap: 6px; }
 .card-name {
   font-family: var(--display); font-weight: 500; font-size: 1.18rem;
@@ -176,6 +199,8 @@ a { color: var(--box); }
   color: var(--ink-soft);
 }
 .badge.base { color: var(--box); border-color: color-mix(in srgb, var(--box) 35%, var(--line)); }
+.badge.task-detection { color: var(--box); border-color: color-mix(in srgb, var(--box) 35%, var(--line)); }
+.badge.task-obb { color: var(--box-2); border-color: color-mix(in srgb, var(--box-2) 35%, var(--line)); }
 
 /* class chips — colored like detection labels */
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -215,7 +240,12 @@ a { color: var(--box); }
 .btn.secondary:hover { border-color: var(--ink); }
 .btn:focus-visible { outline: 2px solid var(--box); outline-offset: 1px; }
 
-/* copyable docker command */
+/* copyable command / URL box, with an optional label above it */
+.run-group { display: flex; flex-direction: column; gap: 4px; }
+.run-label {
+  font-family: var(--mono); font-size: 0.66rem; font-weight: 500;
+  color: var(--ink-soft); text-transform: uppercase; letter-spacing: .03em;
+}
 .run {
   font-family: var(--mono); font-size: 0.72rem;
   background: var(--ink); color: #E6E8E6;
