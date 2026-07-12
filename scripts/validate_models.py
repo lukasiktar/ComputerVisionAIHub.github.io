@@ -7,7 +7,6 @@ Run locally before committing:
     python scripts/validate_models.py --check-links  # also verify download URLs resolve
 
 Exit code is non-zero if any ERROR is found, so CI can block the merge.
-Uses only the Python standard library (no pip install needed).
 """
 import argparse
 import json

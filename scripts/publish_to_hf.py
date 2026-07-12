@@ -3,13 +3,13 @@
 Publish a locally trained YOLO model to the Hugging Face Hub.
 
 Use this when you trained outside the Colab notebook and just want to push
-weights. The notebook already does this inline; this is the standalone version.
+weights.
 
 Example:
     pip install huggingface_hub
     huggingface-cli login        # or pass --token
     python scripts/publish_to_hf.py \\
-        --repo youruser/traffic-signs-v1 \\
+        --repo youruser/yourmodel-id \\
         --pt runs/train/weights/best.pt \\
         --onnx runs/train/weights/best.onnx
 """

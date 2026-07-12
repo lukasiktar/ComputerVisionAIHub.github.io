@@ -33,7 +33,8 @@
       "download": "https://huggingface.co/lukasiktar11/jetson_nano_detection/resolve/main/best.pt",
       "onnx": "https://huggingface.co/lukasiktar11/jetson_nano_detection/resolve/main/best.onnx",
       "size_mb": 5.4,
-      "image_size": 640
+      "image_size": 640,
+      "image":"assets/previews/JetsonNanoFrontDetection.png"
     },
 
 
@@ -234,6 +235,29 @@
       "hf_repo": "aerial-traffic-detector",
       "download": "https://huggingface.co/lukasiktar11/aerial-traffic-detector/resolve/main/best.pt",
       "onnx": "https://huggingface.co/lukasiktar11/aerial-traffic-detector/resolve/main/best.onnx",
+      "size_mb": 20.3,
+      "image_size": 640
+    },
+    {
+      "id": "thremal-fire-detector",
+      "name": "Thermal fire detector",
+      "summary": "Detects fire from thermal images.",
+      "base_model": "yolo26s",
+      "task": "detection",
+      "classes": [
+        "Fire"
+      ],
+      "dataset": "https://universe.roboflow.com/computervisionaihub-n6cdj/thermal-flame-and-smoke-detect",
+      "dataset_license": "CC BY 4.0",
+      "metrics": {
+        "mAP50": 0.83,
+        "mAP50_95": 0.388,
+        "precision": 0.831,
+        "recall": 0.733
+      },
+      "hf_repo": "lukasiktar11/thremal-fire-detector",
+      "download": "https://huggingface.co/lukasiktar11/thremal-fire-detector/resolve/main/best.pt",
+      "onnx": "https://huggingface.co/lukasiktar11/thremal-fire-detector/resolve/main/best.onnx",
       "size_mb": 20.3,
       "image_size": 640
     }
