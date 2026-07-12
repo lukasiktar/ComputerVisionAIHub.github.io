@@ -60,7 +60,7 @@
       "onnx": "https://huggingface.co/lukasiktar11/traffic_vehicle_detection/resolve/main/best.onnx",
       "size_mb": 5.4,
       "image_size": 640,
-      "image":"assets/previews/TrafficVehicleDetection.png"
+      "image":"assets/previews/TrafficVehicleDetection1.png"
     },
     {
       "id": "traffic-vehicle-detection2",
