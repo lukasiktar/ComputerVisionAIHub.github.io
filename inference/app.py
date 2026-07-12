@@ -7,6 +7,7 @@ and see annotated detections. Runs fully on the user's machine.
 
 Launched automatically by the Docker image on port 7860.
 """
+import hashlib
 import os
 import urllib.request
 import gradio as gr
@@ -27,7 +28,12 @@ def get_model(model_ref: str):
 
     path = model_ref
     if model_ref.startswith("http"):
-        path = os.path.join("/tmp", os.path.basename(model_ref.split("?")[0]) or "model.pt")
+        # Every catalog repo serves its weights as "best.pt", so basename alone
+        # collides across models — hash the full URL to keep each download distinct.
+        clean_url = model_ref.split("?")[0]
+        ext = os.path.splitext(clean_url)[1] or ".pt"
+        digest = hashlib.sha256(model_ref.encode()).hexdigest()[:16]
+        path = os.path.join("/tmp", f"{digest}{ext}")
         if not os.path.exists(path):
             urllib.request.urlretrieve(model_ref, path)
 
@@ -39,7 +45,7 @@ def get_model(model_ref: str):
 def run(model_ref, image, conf):
     model = get_model(model_ref)
     results = model(image, conf=conf)
-    annotated = results[0].plot()[:, :, ::-1]  # BGR -> RGB
+    annotated = results[0].plot()  # BGR -> RGB
 
     names = model.names
 

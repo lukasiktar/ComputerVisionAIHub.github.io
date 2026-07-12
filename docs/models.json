@@ -59,7 +59,8 @@
       "download": "https://huggingface.co/lukasiktar11/traffic_vehicle_detection/resolve/main/best.pt",
       "onnx": "https://huggingface.co/lukasiktar11/traffic_vehicle_detection/resolve/main/best.onnx",
       "size_mb": 5.4,
-      "image_size": 640
+      "image_size": 640,
+      "image":"assets/previews/TrafficVehicleDetection.png"
     },
     {
       "id": "traffic-vehicle-detection2",
@@ -84,7 +85,9 @@
       "download": "https://huggingface.co/lukasiktar11/traffic_vehicle_detection2/resolve/main/best.pt",
       "onnx": "https://huggingface.co/lukasiktar11/traffic_vehicle_detection2/resolve/main/best.onnx",
       "size_mb": 20.3,
-      "image_size": 640
+      "image_size": 640,
+      "image":"assets/previews/TrafficVehicleDetection2.png"
+
     },
 
     {
@@ -109,7 +112,8 @@
       "download": "https://huggingface.co/lukasiktar11/football-player-detector/resolve/main/best.pt",
       "onnx": "https://huggingface.co/lukasiktar11/football-player-detector/resolve/main/best.onnx",
       "size_mb": 20.3,
-      "image_size": 640
+      "image_size": 640,
+      "image":"assets/previews/FootballPlayerDetection1.png"
     },
 
     {
@@ -134,7 +138,8 @@
       "download": "https://huggingface.co/lukasiktar11/football-player-detector2/resolve/main/best.pt",
       "onnx": "https://huggingface.co/lukasiktar11/football-player-detector2/resolve/main/best.onnx",
       "size_mb": 5.4,
-      "image_size": 640
+      "image_size": 640,
+      "image":"assets/previews/FootballPlayerDetection2.png"
     },
     {
       "id": "parking-spot-detector",
@@ -158,7 +163,8 @@
       "download": "https://huggingface.co/lukasiktar11/parking-spot-detector/resolve/main/best.pt",
       "onnx": "https://huggingface.co/lukasiktar11/parking-spot-detector/resolve/main/best.onnx",
       "size_mb": 21.8,
-      "image_size": 640
+      "image_size": 640,
+      "image":"assets/previews/ParkingSpotDetection.png"
     },
     {
       "id": "parking-spot-detector2",
@@ -182,7 +188,8 @@
       "download": "https://huggingface.co/lukasiktar11/parking-spot-detector2/resolve/main/best.pt",
       "onnx": "https://huggingface.co/lukasiktar11/parking-spot-detector2/resolve/main/best.onnx",
       "size_mb": 5.85,
-      "image_size": 640
+      "image_size": 640,
+      "image":"assets/previews/ParkingSpotDetection2.png"
     },
 
     {
@@ -207,7 +214,8 @@
       "download": "https://huggingface.co/lukasiktar11/parking-spot-detector3/resolve/main/best.pt",
       "onnx": "https://huggingface.co/lukasiktar11/parking-spot-detector3/resolve/main/best.onnx",
       "size_mb": 5.85,
-      "image_size": 640
+      "image_size": 640,
+      "image":"assets/previews/ParkingSpotDetection3.png"
     },
 
     {
@@ -236,7 +244,8 @@
       "download": "https://huggingface.co/lukasiktar11/aerial-traffic-detector/resolve/main/best.pt",
       "onnx": "https://huggingface.co/lukasiktar11/aerial-traffic-detector/resolve/main/best.onnx",
       "size_mb": 20.3,
-      "image_size": 640
+      "image_size": 640,
+      "image":"assets/previews/AerialTrafficDetection.png"
     },
     {
       "id": "thremal-fire-detector",
@@ -259,7 +268,8 @@
       "download": "https://huggingface.co/lukasiktar11/thremal-fire-detector/resolve/main/best.pt",
       "onnx": "https://huggingface.co/lukasiktar11/thremal-fire-detector/resolve/main/best.onnx",
       "size_mb": 20.3,
-      "image_size": 640
+      "image_size": 640,
+      "image":"assets/previews/ThermalFireDetection.png"
     }
 
 
